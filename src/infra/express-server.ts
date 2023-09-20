@@ -7,7 +7,7 @@ export class ExpressServer {
 
   constructor(
     private expressRouter: ExpressRouter,
-    private port: string
+    private port: string,
   ) {
     this.configureBodyParser();
     this.configureRoutes();
