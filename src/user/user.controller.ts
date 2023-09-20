@@ -15,14 +15,14 @@ export class UserController {
     // Vérifier la longueur minimale du nom d'utilisateur
     if (trimmedUsername.length < 5) {
       throw new Error(
-        "Le nom d'utilisateur doit comporter au moins 5 caractères.",
+        "Le nom d'utilisateur doit comporter au moins 5 caractères."
       );
     }
 
     // Vérifier la longueur maximale du nom d'utilisateur
     if (trimmedUsername.length > 15) {
       throw new Error(
-        "Le nom d'utilisateur ne peut pas dépasser 15 caractères.",
+        "Le nom d'utilisateur ne peut pas dépasser 15 caractères."
       );
     }
 
@@ -30,7 +30,7 @@ export class UserController {
     const regex = /^[a-zA-Z0-9_]*$/;
     if (!regex.test(trimmedUsername)) {
       throw new Error(
-        "Le nom d'utilisateur contient des caractères non autorisés.",
+        "Le nom d'utilisateur contient des caractères non autorisés."
       );
     }
 
@@ -38,7 +38,7 @@ export class UserController {
   }
 
   getById(id: number): User | null {
-    // Vérifier si l'ID est un nombre décimal
+    // Vérifier si l'ID est un nombre décimal, mais il y a le parsInt en amont donc...
     if (id % 1 !== 0) {
       throw new Error("L'ID doit être un nombre entier.");
     }
