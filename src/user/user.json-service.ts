@@ -30,7 +30,7 @@ export class UserJSONService implements UserService {
 
   getById(id: number): User | null {
     // Charger les données existantes à partir du fichier JSON
-    const data = fs.readFileSync(__dirname + "users.json", "utf8");
+    const data = fs.readFileSync(__dirname + "/users.json", "utf8");
     const users: User[] = JSON.parse(data);
 
     // Trouver l'utilisateur par son ID
